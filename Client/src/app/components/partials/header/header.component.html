@@ -1,0 +1,28 @@
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">Welcome to Prajakta'S Restaurant!</a>
+    <nav>
+      <ul>
+
+        <li *ngIf="!user.token" >
+          <a routerLink="/login">LOGIN</a>
+        </li>
+
+        <li *ngIf="isAuth" class="menu-container">
+          <a routerLink="/dashboard">{{user.name}}</a>
+          <div class="menu">
+            <a routerLink="/profile">PROFILE</a>
+            <a routerLink="/orders">ORDERS</a>
+            <a (click)="logOut()">Log-Out</a>
+          </div>
+        </li>
+
+        <li>
+          <a routerLink="/cart-page">YOUR CART</a>
+          <span *ngIf="cartQuantity">{{cartQuantity}}</span>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
