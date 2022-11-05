@@ -10,7 +10,7 @@ export class DefaultButtonComponent implements OnInit {
 
 
   @Input()
-  type: 'submit' | 'button'='submit';
+  type: 'submit' | 'button' = 'submit';
   @Input()
   text:string="Submit";
   @Input()
@@ -23,7 +23,7 @@ export class DefaultButtonComponent implements OnInit {
  widthRem=12;
 
  @Output()
-  onClick=new EventEmitter();
+  onClick = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
