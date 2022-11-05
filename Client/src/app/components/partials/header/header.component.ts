@@ -27,11 +27,11 @@ export class HeaderComponent implements OnInit {
   }
 
   logOut(){
-    this.userService.logOut();
+    this.userService.logout();
   }
 
   get isAuth(){
-    return this.user.token;
+    return this.user.name;
   }
 
 

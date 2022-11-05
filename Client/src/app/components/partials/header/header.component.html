@@ -4,12 +4,12 @@
     <nav>
       <ul>
 
-        <li *ngIf="!user.token" >
+        <li *ngIf="!isAuth" >
           <a routerLink="/login">LOGIN</a>
         </li>
 
         <li *ngIf="isAuth" class="menu-container">
-          <a routerLink="/dashboard">{{user.name}}</a>
+          <a   routerLink="/dashboard">{{user.name}}</a>
           <div class="menu">
             <a routerLink="/profile">PROFILE</a>
             <a routerLink="/orders">ORDERS</a>
@@ -26,3 +26,6 @@
     </nav>
   </div>
 </header>
+
+
+

@@ -20,6 +20,13 @@ export class UserService {
     this.userObservable=this.userSubject.asObservable();
   }
 
+
+  public get currentUser():User{
+    return this.userSubject.value;
+  }
+
+
+
   login(userLogin:IUserLogin):Observable<User>{
     return  this.http.post<User>(USER_LOGIN_URL,userLogin).pipe(
       tap({
@@ -62,7 +69,7 @@ export class UserService {
   }
 
 
-  logOut(){
+  logout(){
     this.userSubject.next(new User());
     localStorage.removeItem(USER_KEY);
     window.location.reload();
@@ -71,7 +78,7 @@ export class UserService {
 
 
   private setUserToLocalStorage(user:User){
-    localStorage.setItem(USER_KEY,JSON.stringify(user))
+    localStorage.setItem(USER_KEY,JSON.stringify(user));
   }
 
   private getUserFromLocalStorage():User{

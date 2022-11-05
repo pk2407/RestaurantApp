@@ -33,8 +33,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.invalid)
     return;
 
-    alert(`email:${this.fc.email.value},
-    password:${this.fc.password.value}`)
+
 
     this.userService.login({email: this.fc.email.value ,
     password: this.fc.password.value}).subscribe(()=>{
